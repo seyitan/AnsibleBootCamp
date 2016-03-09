@@ -24,4 +24,5 @@
     sudo: true
     when: ansible_os_family=='RedHat'
 
-  #- name: Add a user
+  - name: Add a user
+  

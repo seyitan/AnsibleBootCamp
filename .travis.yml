@@ -1,0 +1,23 @@
+language: bash
+sudo: required
+services: docker
+# The bootstrap role will always be tested
+# Add the containers you need for the services you want to test here
+env:
+  - INVENTORY=inventory.travis CONTAINER="brucellino/ansiblecontainer"
+
+before_install:
+# Pull the containers you need for the tests
+  - docker pull ${CONTAINER}
+# basic connectivity test
+# Test Bootstrap role
+# Test Site-BDII playbook
+
+install:
+  - cd $TRAVIS_BUILD_DIR/Ansible
+  - docker run -h localhost.dev -v $PWD:$PWD -w $PWD $CONTAINER ansible-playbook -c local -vvvvv -i inventories/$INVENTORY Lesson1.yml
+notifications:
+  email: false
+  slack:
+    rooms:
+      - africa-arabia-roc:8bySc6HbbEvvxPYqg0Z56Xdk#code
