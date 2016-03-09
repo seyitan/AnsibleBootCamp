@@ -14,7 +14,7 @@ before_install:
 # Test Site-BDII playbook
 
 install:
-  - cd $TRAVIS_BUILD_DIR/Ansible
+  - cd $TRAVIS_BUILD_DIR/
   - docker run -h localhost.dev -v $PWD:$PWD -w $PWD $CONTAINER ansible-playbook -c local -vvvvv -i inventories/$INVENTORY Lesson1.yml
 notifications:
   email: false
