@@ -1,0 +1,11 @@
+---
+# This is the first play
+# the name of the play is "Copy a file"
+# This play only has one task so far.
+- hosts: localhost
+  name: copy a file
+  tasks:
+  - name: copy file README to the remote host
+    copy:
+      src: README.md
+      dest: /tmp//README.md
