@@ -4,7 +4,7 @@ services: docker
 # The bootstrap role will always be tested
 # Add the containers you need for the services you want to test here
 env:
-  - INVENTORY=inventory.travis CONTAINER="brucellino/ansiblecontainer"
+  - INVENTORY=inventory.eko-konnect.ng.dev CONTAINER="brucellino/ansiblecontainer"
 
 before_install:
 # Pull the containers you need for the tests
